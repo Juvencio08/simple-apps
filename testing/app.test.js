@@ -19,8 +19,14 @@ describe('Unit Test /app1', () => {
   });
 
    describe('Unit Test /app2', () => {
-    it('should respond with "Hello Juvenc!"', async () => {
+    it('should respond with "Hello app2!"', async () => {
       const response = await request(app).get('/app2');
+      expect(response.status).toBe(200);
+    });
+  });
+  describe('Unit Test /juvenc', () => {
+    it('should respond with "Hello Juvenc!"', async () => {
+      const response = await request(app).get('/juvenc');
       expect(response.status).toBe(200);
     });
   });
