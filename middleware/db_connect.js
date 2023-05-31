@@ -2,10 +2,10 @@ const mysql = require('mysql')
 
 // Connect database
 const connection = mysql.createConnection({
-  host: process.evn.DB_Host,
-  user: process.evn.DB_USER,
-  password: process.evn.DB_PASSWORD,
-  database: process.evn.DB_NAME,
+  host: process.env.DB_Host,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 })
 
 module.exports = connection
