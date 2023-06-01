@@ -38,7 +38,7 @@ describe('Integration Test Connect Database', () => {
     // Create a connection pool instead of a single connection
     connection = mysql.createPool({
       connectionLimit: 10, // Adjust the limit according to your requirements
-      host: '172.19.0.3',
+      host: 'db',
       user: 'peserta',
       password: 'password',
       database: 'training'
