@@ -53,7 +53,7 @@ describe('Integration Test Connect Database', () => {
     // Close the connection pool after the tests are done
     connection.end();
   });
-
+  
  it('should respond with users data', async () => {
     const response = await request(app).get('/users');
     expect(response.status).toBe(200);
