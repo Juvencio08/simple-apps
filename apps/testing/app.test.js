@@ -1,5 +1,6 @@
 const request = require('supertest');
 const mysql = require('mysql');
+require('dotenv').config();
 
 const connection = require('../middleware/db_connect');
 const app = require('../app'); // Replace with the path to your application file
@@ -38,10 +39,10 @@ describe('Integration Test Connect Database', () => {
     // Create a connection pool instead of a single connection
     connection = mysql.createPool({
       connectionLimit: 10, // Adjust the limit according to your requirements
-      host: 'db',
-      user: 'peserta',
-      password: 'password',
-      database: 'training'
+      host: process.env.DB_Host,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME
     });
 
     // Set the connection for the application to use
@@ -53,7 +54,7 @@ describe('Integration Test Connect Database', () => {
     connection.end();
   });
 
-it('should respond with users data', async () => {
+ it('should respond with users data', async () => {
     const response = await request(app).get('/users');
     expect(response.status).toBe(200);
   });
