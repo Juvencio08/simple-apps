@@ -1,12 +1,17 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: auto;
-    background-color: whitesmoke;
+    background-color: blueviolet;
 }
 
 .logo {
     width: 10%;
 }
+h1 {
+    color: brown;
+    font-style: italic;
+}
+
 h1 {
     color: brown;
     font-style: italic;
