@@ -39,7 +39,7 @@ describe('Integration Test Connect Database', () => {
     // Create a connection pool instead of a single connection
     connection = mysql.createPool({
       connectionLimit: 10, // Adjust the limit according to your requirements
-      host: process.env.DB_Host,
+      host: process.env.DB_host,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME
@@ -53,7 +53,7 @@ describe('Integration Test Connect Database', () => {
     // Close the connection pool after the tests are done
     connection.end();
   });
-  
+
  it('should respond with users data', async () => {
     const response = await request(app).get('/users');
     expect(response.status).toBe(200);
